@@ -37,11 +37,13 @@
                 @if (Auth::user()->usertype == 'employee') 
                 <li><a href="{{url('check-in')}}" class="text-sm text-gray-700 dark:text-gray-500 underline">Check In</a></li>
                 @endif
-                    <a class="dropdown-item" href="{{ route('logout') }}"
+                <li>
+                    <a class="text-sm text-gray-700 dark:text-gray-500 underline" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
                         {{ __('Logout') }}
                     </a>
+                  </li>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
                     </form>
